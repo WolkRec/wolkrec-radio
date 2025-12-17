@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <title>WolkRecRadio</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <script src="https://telegram.org/js/telegram-web-app.js"></script>
+  <style>
+    body {
+      margin: 0;
+      font-family: -apple-system, BlinkMacSystemFont, Arial, sans-serif;
+      background: #0e0e11;
+      color: white;
+      text-align: center;
+      padding: 20px;
+    }
+    img {
+      max-width: 240px;
+      margin: 20px auto;
+    }
+    h1 {
+      margin-top: 10px;
+    }
+    p {
+      opacity: 0.8;
+    }
+    button {
+      margin-top: 30px;
+      font-size: 20px;
+      padding: 15px 40px;
+      border-radius: 30px;
+      border: none;
+      background: #ff2f92;
+      color: white;
+    }
+  </style>
+</head>
+<body>
+
+  <img src="logo.png" alt="Wolk Recording Studios">
+  <h1>WolkRecRadio</h1>
+  <p>
+    Эксклюзивное радио от Wolk Recording Studios.<br>
+    Авторская музыка, редкие релизы и атмосфера студии 24/7.
+  </p>
+
+  <audio id="player" controls autoplay style="width:100%; margin-top:20px;">
+    <source src="https://docs.google.com/uc?export=download&id=FILE_ID" type="audio/mpeg">
+  </audio>
+
+  <button onclick="nextTrack()">⏭ Следующий</button>
+
+  <script>
+    const folderId = "1tdU6pE0f6IbSitEfgoYevWcSdthQpG7h";
+    let track = 1;
+
+    function nextTrack() {
+      track++;
+      if (track > 100) track = 1;
+      document.getElementById("player").src =
+        "https://docs.google.com/uc?export=download&id=" + folderId;
+    }
+  </script>
+
+</body>
+</html>
